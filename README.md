@@ -20,12 +20,6 @@
   </p>
 
   <p align="center">
-    <a href="https://vyra.koiiverse.cloud"><b>Official Website</b></a> •
-    <a href="#features"><b>Features</b></a> •
-    <a href="https://vyra.koiiverse.cloud/privacy"><b>Privacy</b></a> •
-    <a href="#download-now"><b>Download</b></a> •
-    <a href="#screenshots"><b>Screenshots</b></a> •
-    <a href="https://github.com/rukamori/VYRA/issues/new/choose"><b>Support</b></a>
   </p>
 
   <div align="center">
@@ -38,8 +32,6 @@
     <img src="https://img.shields.io/badge/Toolkit-Jetpack_Compose-4285f4?style=for-the-badge&logo=jetpack-compose&color=6366f1&labelColor=1e1e2e" alt="Jetpack Compose Toolkit" />
     <img src="https://img.shields.io/badge/Design-Material_3-000000?style=for-the-badge&logo=material-design&color=6366f1&labelColor=1e1e2e" alt="Material Design 3" />
     <a href="https://www.virustotal.com/gui/file/176bea37aff02a606d04ff0a61478fabdb0bd079f9e97319645452af420e5d84/detection/f-176bea37aff02a606d04ff0a61478fabdb0bd079f9e97319645452af420e5d84-1778840479" target="_blank"><img src="https://img.shields.io/badge/VirusTotal-SAFE-green?style=for-the-badge&logo=virustotal&logoColor=white&labelColor=1e1e2e&color=5865F2" alt="VirusTotal" /></a>
-    <a href="https://t.me/VYRAGC"><img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram" /></a>
-    <a href="https://discord.gg/XF2fpb9rTq"><img src="https://img.shields.io/discord/1498315636714115224?style=for-the-badge&logo=discord&logoColor=ffffff&label=Discord&labelColor=6366f1&color=6366f1" alt="Discord" /></a>
   </div>
   
   <br />
@@ -270,10 +262,6 @@ If you choose to use a fork, you do so at your own risk.
 > **Notes:** The trusted download source is listed above; we are not responsible for any risks you may encounter from downloading from other sources.
 
 ## ❓ Need Help or Have Questions?
-Join Our Telegram Channels or Discord Servers for Support and Discussion.
-
-[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/VYRAGC)
-[![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/XF2fpb9rTq)
 
 ---
 
