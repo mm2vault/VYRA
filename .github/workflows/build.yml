@@ -46,7 +46,8 @@ jobs:
 
   build:
     name: Build Release APKs (${{ matrix.distribution }}-${{ matrix.device }}-${{ matrix.abi }})
-    if: github.actor != 'dependabot[bot]' && github.actor != 'renovate[bot]'
+    # Release signing is optional. When no keystore is configured, skip this job and let the installable debug APK build below succeed.
+    if: github.actor != 'dependabot[bot]' && github.actor != 'renovate[bot]' && secrets.KEYSTORE != ''
     runs-on: ubuntu-latest
     needs: notifyTelegram
 
