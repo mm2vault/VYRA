@@ -462,6 +462,9 @@
     <string name="custom_value">Custom value</string>
     <string name="vyra_canvas">VYRA Canvas</string>
     <string name="vyra_canvas_desc">Animate album artwork while playing</string>
+    <!-- Compatibility aliases for existing settings code. -->
+    <string name="archivetune_canvas">@string/vyra_canvas</string>
+    <string name="archivetune_canvas_desc">@string/vyra_canvas_desc</string>
     <string name="player_background_style_v8_v9_desc">Unavailable with V8, V9, and V10 player styles</string>
     <string name="show_button1_description">Toggle visibility of button 1 in Discord Rich Presence</string>
     <string name="show_button2_description">Toggle visibility of button 2 in Discord Rich Presence</string>
