@@ -6,7 +6,7 @@ on:
     branches: [ "main", "dev" ]
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build_debug:
@@ -62,13 +62,20 @@ jobs:
           set -euo pipefail
           APK="$(find app/build/outputs/apk -type f -name '*.apk' | head -n 1)"
           test -n "$APK"
-          echo "path=$APK" >> "$GITHUB_OUTPUT"
-          echo "APK created: $APK"
+          cp "$APK" "$RUNNER_TEMP/VYRA-debug.apk"
+          echo "path=$RUNNER_TEMP/VYRA-debug.apk" >> "$GITHUB_OUTPUT"
+          echo "APK created: $RUNNER_TEMP/VYRA-debug.apk"
 
-      - name: Upload APK
-        uses: actions/upload-artifact@v7
-        with:
-          name: VYRA-debug-apk
-          path: ${{ steps.apk.outputs.path }}
-          if-no-files-found: error
-          retention-days: 14
+      - name: Publish direct APK release
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          TAG="debug-${GITHUB_RUN_NUMBER}"
+          gh release create "$TAG" \
+            "$RUNNER_TEMP/VYRA-debug.apk" \
+            --repo "$GITHUB_REPOSITORY" \
+            --title "VYRA Debug APK #${GITHUB_RUN_NUMBER}" \
+            --notes "VYRA debug APK built from commit ${GITHUB_SHA}." \
+            --prerelease
