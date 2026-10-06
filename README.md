@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="https://github.com/rukamori/VYRA/blob/main/fastlane/metadata/android/en-US/images/icon.png" width="160" height="160" alt="VYRA Logo" style="border-radius: 22%">
+  <img src="https://github.com/mm2vault/VYRA/blob/main/fastlane/metadata/android/en-US/images/icon.png" width="160" height="160" alt="VYRA Logo" style="border-radius: 22%">
 
   <h1>VYRA</h1>
 
@@ -61,15 +61,15 @@ If you choose to use a fork, you do so at your own risk.
 
 <div align="center" id="screenshots">
 
-<img src="https://github.com/rukamori/VYRA/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/screenshot_1.jpg" alt="Browse" width="30%" />
-<img src="https://github.com/rukamori/VYRA/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/screenshot_2.jpg" alt="Live Lyrics" width="30%" />
-<img src="https://github.com/rukamori/VYRA/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/screenshot_3.jpg" alt="Theme Customization" width="30%" />
-<img src="https://github.com/rukamori/VYRA/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/screenshot_4.jpg" alt="Live Statistics" width="30%" />
-<img src="https://github.com/rukamori/VYRA/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/screenshot_5.jpg" alt="Artist" width="30%" />
-<img src="https://github.com/rukamori/VYRA/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/screenshot_6.jpg" alt="Album" width="30%" />
-<img src="https://github.com/rukamori/VYRA/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/screenshot_7.jpg" alt="Player" width="30%" />
-<img src="https://github.com/rukamori/VYRA/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/screenshot_8.jpg" alt="Settings" width="30%" />
-<img src="https://github.com/rukamori/VYRA/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/screenshot_9.jpg" alt="Settings" width="30%" />
+<img src="https://github.com/mm2vault/VYRA/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/screenshot_1.jpg" alt="Browse" width="30%" />
+<img src="https://github.com/mm2vault/VYRA/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/screenshot_2.jpg" alt="Live Lyrics" width="30%" />
+<img src="https://github.com/mm2vault/VYRA/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/screenshot_3.jpg" alt="Theme Customization" width="30%" />
+<img src="https://github.com/mm2vault/VYRA/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/screenshot_4.jpg" alt="Live Statistics" width="30%" />
+<img src="https://github.com/mm2vault/VYRA/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/screenshot_5.jpg" alt="Artist" width="30%" />
+<img src="https://github.com/mm2vault/VYRA/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/screenshot_6.jpg" alt="Album" width="30%" />
+<img src="https://github.com/mm2vault/VYRA/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/screenshot_7.jpg" alt="Player" width="30%" />
+<img src="https://github.com/mm2vault/VYRA/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/screenshot_8.jpg" alt="Settings" width="30%" />
+<img src="https://github.com/mm2vault/VYRA/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/screenshot_9.jpg" alt="Settings" width="30%" />
 
 </div>
 
@@ -180,13 +180,13 @@ If you choose to use a fork, you do so at your own risk.
   <tbody>
     <tr>
       <td align="center">
-        <a href="https://apps.obtainium.imranr.dev/redirect?r=obtainium://add/https://github.com/rukamori/VYRA/">
+        <a href="https://apps.obtainium.imranr.dev/redirect?r=obtainium://add/https://github.com/mm2vault/VYRA/">
           <img src="https://github.com/ImranR98/Obtainium/blob/main/assets/graphics/badge_obtainium.png" height="50" alt="Get VYRA on Obtainium">
         </a>
       </td>
       <td align="center">
         <a href="https://apt.izzysoft.de/fdroid/index/apk/moe.rukamori.vyra">
-          <img src="https://raw.githubusercontent.com/rukamori/VYRA/757d5932832e1da27ced56de98c5ad1275cf0db1/assets/IzzyOnDroidButtonBorder.svg" height="50" alt="Get VYRA on IzzyOnDroid">
+          <img src="https://raw.githubusercontent.com/mm2vault/VYRA/757d5932832e1da27ced56de98c5ad1275cf0db1/assets/IzzyOnDroidButtonBorder.svg" height="50" alt="Get VYRA on IzzyOnDroid">
         </a>
       </td>
     </tr>
@@ -195,8 +195,8 @@ If you choose to use a fork, you do so at your own risk.
     </tr>
     <tr>
       <td align="center" colspan="2">
-        <a href="https://github.com/rukamori/VYRA/releases/latest">
-          <img src="https://raw.githubusercontent.com/rukamori/VYRA/refs/heads/main/assets/badge_github.png" height="50" alt="Get VYRA on GitHub">
+        <a href="https://github.com/mm2vault/VYRA/releases/latest">
+          <img src="https://raw.githubusercontent.com/mm2vault/VYRA/refs/heads/main/assets/badge_github.png" height="50" alt="Get VYRA on GitHub">
         </a>
       </td>
     </tr>
@@ -212,7 +212,7 @@ If you choose to use a fork, you do so at your own risk.
       </td>
       <td align="center">
         <a href="https://unclouded.app/apps/vyra/">
-          <img src="https://raw.githubusercontent.com/rukamori/VYRA/refs/heads/dev/assets/badge_unclouded.png" height="50" alt="Get VYRA on Unclouded">
+          <img src="https://raw.githubusercontent.com/mm2vault/VYRA/refs/heads/dev/assets/badge_unclouded.png" height="50" alt="Get VYRA on Unclouded">
         </a>
       </td>
     </tr>
@@ -231,7 +231,7 @@ If you choose to use a fork, you do so at your own risk.
     <tr>
       <td align="center">
         <a href="https://nightly.link/rukamori/VYRA/workflows/build/dev/app-gms-mobile-universal-release">
-          <img src="https://raw.githubusercontent.com/rukamori/VYRA/refs/heads/main/assets/badge_github.png" height="50" alt="Download the latest VYRA development build">
+          <img src="https://raw.githubusercontent.com/mm2vault/VYRA/refs/heads/main/assets/badge_github.png" height="50" alt="Download the latest VYRA development build">
         </a>
       </td>
     </tr>
@@ -250,7 +250,7 @@ If you choose to use a fork, you do so at your own risk.
     <tr>
       <td align="center">
         <a href="https://github.com/mm2vault/VYRA/releases/latest">
-          <img src="https://raw.githubusercontent.com/rukamori/VYRA/refs/heads/main/assets/badge_github.png" height="50" alt="Download the latest VYRA nightly build">
+          <img src="https://raw.githubusercontent.com/mm2vault/VYRA/refs/heads/main/assets/badge_github.png" height="50" alt="Download the latest VYRA nightly build">
         </a>
       </td>
     </tr>
@@ -278,8 +278,8 @@ VYRA belongs to everyone. Help us localize the experience for your region.
 </div>
 
 ### ✨ Project Contributors
-<a href="https://github.com/rukamori/VYRA/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=rukamori/VYRA&columns=6" />
+<a href="https://github.com/mm2vault/VYRA/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=mm2vault/VYRA&columns=6" />
 </a>
 
 ### 🛠️ Development & Engineering
@@ -314,7 +314,7 @@ VYRA is licensed under the **GNU General Public License v3.0 (GPLv3)**.
 
 You may copy, modify, and redistribute the source code, including commercially, provided that you comply with the GPLv3. This includes preserving applicable copyright and license notices, clearly identifying modified versions, and providing the corresponding source code when required.
 
-Copyright © Rukamori and the VYRA contributors for their respective original contributions.
+Copyright © mm2vault and the VYRA contributors for their respective original contributions.
 
 The **VYRA™** name, logo, application icon, and official branding are not licensed under the GPLv3. Unofficial forks must not present themselves as official VYRA releases or imply endorsement by the VYRA maintainers.
 
@@ -324,8 +324,8 @@ See the [`LICENSE`](LICENSE) file for the complete GPLv3 terms.
 ---
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/rukamori/VYRA/refs/heads/dev/fastlane/metadata/android/en-US/images/VYRAFull.png" alt="VYRA Banner" style="width: 100%; max-width: 500px;">
+  <img src="https://raw.githubusercontent.com/mm2vault/VYRA/refs/heads/dev/fastlane/metadata/android/en-US/images/VYRAFull.png" alt="VYRA Banner" style="width: 100%; max-width: 500px;">
   <p><b>If VYRA elevated your music experience, please consider giving us a ⭐</b></p>
   <br />
-  <img src="https://raw.githubusercontent.com/rukamori/VYRA/refs/heads/dev/assets/badge_part.png" alt="VYRA Banner" style="width: 180px">
+  <img src="https://raw.githubusercontent.com/mm2vault/VYRA/refs/heads/dev/assets/badge_part.png" alt="VYRA Banner" style="width: 180px">
 </div>
