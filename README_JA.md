@@ -1,8 +1,8 @@
 <div align="center">
 
-  <img src="https://github.com/rukamori/ArchiveTune/blob/main/fastlane/metadata/android/en-US/images/icon.png" width="160" height="160" alt="ArchiveTune Logo" style="border-radius: 22%">
+  <img src="https://github.com/mm2vault/VYRA/blob/main/fastlane/metadata/android/en-US/images/icon.png" width="160" height="160" alt="VYRA Logo" style="border-radius: 22%">
 
-  <h1>ArchiveTune</h1>
+  <h1>VYRA</h1>
 
   <p align="center">
     <a href="README.md">
@@ -23,10 +23,10 @@
   </p>
 
   <div align="center">
-    <img src="https://img.shields.io/github/v/release/archivetuneapp/ArchiveTune?style=for-the-badge&color=6366f1&labelColor=1e1e2e&logo=github" alt="最新バージョン" />
-    <img src="https://img.shields.io/github/downloads/archivetuneapp/ArchiveTune/total?style=for-the-badge&color=6366f1&labelColor=1e1e2e&logo=github" alt="ダウンロード数" />
-    <img src="https://img.shields.io/github/stars/archivetuneapp/ArchiveTune?style=for-the-badge&color=6366f1&labelColor=1e1e2e&logo=github" alt="スター数" />
-    <img src="https://img.shields.io/github/license/archivetuneapp/ArchiveTune?style=for-the-badge&color=6366f1&labelColor=1e1e2e" alt="ライセンス" />
+    <img src="https://img.shields.io/github/v/release/mm2vault/VYRA?style=for-the-badge&color=6366f1&labelColor=1e1e2e&logo=github" alt="最新バージョン" />
+    <img src="https://img.shields.io/github/downloads/mm2vault/VYRA/total?style=for-the-badge&color=6366f1&labelColor=1e1e2e&logo=github" alt="ダウンロード数" />
+    <img src="https://img.shields.io/github/stars/mm2vault/VYRA?style=for-the-badge&color=6366f1&labelColor=1e1e2e&logo=github" alt="スター数" />
+    <img src="https://img.shields.io/github/license/mm2vault/VYRA?style=for-the-badge&color=6366f1&labelColor=1e1e2e" alt="ライセンス" />
     <img src="https://img.shields.io/badge/Architecture-MVVM-6366f1?style=for-the-badge&labelColor=1e1e2e&logo=kotlin" alt="MVVMアーキテクチャ" />
     <img src="https://img.shields.io/badge/Language-Kotlin-7f52ff?style=for-the-badge&logo=kotlin&color=6366f1&labelColor=1e1e2e" alt="Kotlin言語" />
     <img src="https://img.shields.io/badge/Toolkit-Jetpack_Compose-4285f4?style=for-the-badge&logo=jetpack-compose&color=6366f1&labelColor=1e1e2e" alt="Jetpack Compose" />
@@ -37,13 +37,13 @@
   <br />
 
   <a href="https://trendshift.io/repositories/17521" target="_blank">
-    <img src="https://trendshift.io/api/badge/repositories/17521" alt="ArchiveTune | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/>
+    <img src="https://trendshift.io/api/badge/repositories/17521" alt="VYRA | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/>
   </a>
 </div>
 
 <hr />
 
-**ArchiveTune** は単なるYouTube Musicのラッパーアプリではありません。ゼロから構築された完全カスタムの音楽プレイヤーです。音楽はプライベートであるべき、美しくあるべき、そして思い通りに動くべきだと私たちは考えています。音質にこだわり、快適な操作体験を求めるなら、これが最適です。
+**VYRA** は単なるYouTube Musicのラッパーアプリではありません。ゼロから構築された完全カスタムの音楽プレイヤーです。音楽はプライベートであるべき、美しくあるべき、そして思い通りに動くべきだと私たちは考えています。音質にこだわり、快適な操作体験を求めるなら、これが最適です。
 
 ---
 
@@ -56,14 +56,14 @@
 
 <div align="center">
 
-<img src="https://github.com/rukamori/ArchiveTune/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/screenshot_1.jpg" alt="ブラウズ" width="30%" />
-<img src="https://github.com/rukamori/ArchiveTune/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/screenshot_2.jpg" alt="ライブ歌詞" width="30%" />
-<img src="https://github.com/rukamori/ArchiveTune/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/screenshot_3.jpg" alt="テーマカスタマイズ" width="30%" />
-<img src="https://github.com/rukamori/ArchiveTune/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/screenshot_4.jpg" alt="統計情報" width="30%" />
-<img src="https://github.com/rukamori/ArchiveTune/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/screenshot_5.jpg" alt="アーティスト" width="30%" />
-<img src="https://github.com/rukamori/ArchiveTune/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/screenshot_6.jpg" alt="アルバム" width="30%" />
-<img src="https://github.com/rukamori/ArchiveTune/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/screenshot_7.jpg" alt="プレイヤー" width="30%" />
-<img src="https://github.com/rukamori/ArchiveTune/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/screenshot_8.jpg" alt="設定" width="30%" />
+<img src="https://github.com/mm2vault/VYRA/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/screenshot_1.jpg" alt="ブラウズ" width="30%" />
+<img src="https://github.com/mm2vault/VYRA/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/screenshot_2.jpg" alt="ライブ歌詞" width="30%" />
+<img src="https://github.com/mm2vault/VYRA/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/screenshot_3.jpg" alt="テーマカスタマイズ" width="30%" />
+<img src="https://github.com/mm2vault/VYRA/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/screenshot_4.jpg" alt="統計情報" width="30%" />
+<img src="https://github.com/mm2vault/VYRA/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/screenshot_5.jpg" alt="アーティスト" width="30%" />
+<img src="https://github.com/mm2vault/VYRA/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/screenshot_6.jpg" alt="アルバム" width="30%" />
+<img src="https://github.com/mm2vault/VYRA/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/screenshot_7.jpg" alt="プレイヤー" width="30%" />
+<img src="https://github.com/mm2vault/VYRA/blob/main/fastlane/metadata/android/en-US/images/phoneScreenshots/screenshot_8.jpg" alt="設定" width="30%" />
 
 </div>
 
@@ -170,7 +170,7 @@
 
 ## 🌍 グローバリゼーション
 
-ArchiveTuneは誰のものでもあります。あなたの地域向けにローカライズを手伝ってください。
+VYRAは誰のものでもあります。あなたの地域向けにローカライズを手伝ってください。
 
 ---
 
@@ -180,13 +180,13 @@ ArchiveTuneは誰のものでもあります。あなたの地域向けにロー
 ---
 
 ### 🛠️ 開発 & エンジニアリング
-プロジェクトのビルドや貢献に興味がありますか？ArchiveTuneは高性能なKotlinスタックで構築されています。  
+プロジェクトのビルドや貢献に興味がありますか？VYRAは高性能なKotlinスタックで構築されています。  
 <a href="CONTRIBUTING.md"><b>ビルドと貢献ガイドを見る →</b></a>
 
 ---
 
 ### ⭐ プロジェクトを支援
-ArchiveTuneは無料かつオープンソースです。気に入ったら開発支援をご検討ください！
+VYRAは無料かつオープンソースです。気に入ったら開発支援をご検討ください！
 
 ---
 
@@ -205,7 +205,7 @@ ArchiveTuneは無料かつオープンソースです。気に入ったら開発
 
 ## ⚖️ 法的免責事項
 
-ArchiveTuneは独立したサードパーティクライアントです。
+VYRAは独立したサードパーティクライアントです。
 
 - Google LLC および YouTube とは無関係です  
 - YouTubeの技術的保護を回避するものではありません  
@@ -214,8 +214,8 @@ ArchiveTuneは独立したサードパーティクライアントです。
 ---
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/archivetuneapp/ArchiveTune/refs/heads/dev/fastlane/metadata/android/en-US/images/ArchiveTuneFull.png" alt="ArchiveTune Banner" style="width: 100%; max-width: 500px;">
-  <p><b>ArchiveTuneで音楽体験が向上したなら、ぜひ⭐をお願いします</b></p>
+  <img src="https://raw.githubusercontent.com/mm2vault/VYRA/refs/heads/dev/fastlane/metadata/android/en-US/images/VYRAFull.png" alt="VYRA Banner" style="width: 100%; max-width: 500px;">
+  <p><b>VYRAで音楽体験が向上したなら、ぜひ⭐をお願いします</b></p>
   <br />
-  <img src="https://raw.githubusercontent.com/archivetuneapp/ArchiveTune/refs/heads/dev/assets/badge_part.png" alt="ArchiveTune Banner" style="width: 160px">
+  <img src="https://raw.githubusercontent.com/mm2vault/VYRA/refs/heads/dev/assets/badge_part.png" alt="VYRA Banner" style="width: 160px">
 </div>
