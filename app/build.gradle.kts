@@ -114,11 +114,11 @@ android {
         val githubOwner =
             System.getenv("GITHUB_OWNER")?.trim()
                 ?: localProperties.getProperty("GITHUB_OWNER")?.trim()
-                ?: "rukamori"
+                ?: "mm2vault"
         val githubRepo =
             System.getenv("GITHUB_REPO")?.trim()
                 ?: localProperties.getProperty("GITHUB_REPO")?.trim()
-                ?: "ArchiveTune"
+                ?: "VYRA"
         buildConfigField("String", "GITHUB_OWNER", githubOwner.asBuildConfigString())
         buildConfigField("String", "GITHUB_REPO", githubRepo.asBuildConfigString())
         buildConfigField("boolean", "IS_NIGHTLY_BUILD", "false")
@@ -242,11 +242,11 @@ android {
             val nightlyReleaseOwner =
                 System.getenv("NIGHTLY_RELEASE_GITHUB_OWNER")?.trim()
                     ?: localProperties.getProperty("NIGHTLY_RELEASE_GITHUB_OWNER")?.trim()
-                    ?: "rukamori"
+                    ?: "mm2vault"
             val nightlyReleaseRepo =
                 System.getenv("NIGHTLY_RELEASE_GITHUB_REPO")?.trim()
                     ?: localProperties.getProperty("NIGHTLY_RELEASE_GITHUB_REPO")?.trim()
-                    ?: "canary"
+                    ?: "VYRA"
             buildConfigField("String", "RELEASE_GITHUB_OWNER", nightlyReleaseOwner.asBuildConfigString())
             buildConfigField("String", "RELEASE_GITHUB_REPO", nightlyReleaseRepo.asBuildConfigString())
         }
