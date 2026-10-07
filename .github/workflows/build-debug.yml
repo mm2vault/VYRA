@@ -57,7 +57,7 @@ jobs:
             exit 0
           fi
           mkdir -p app/keystore
-          echo "$VYRA_KEYSTORE_BASE64" | base64 --decode > app/keystore/release.keystore
+          echo "$VYRA_KEYSTORE_BASE64" | base64 -d --ignore-garbage > app/keystore/release.keystore
           test -s app/keystore/release.keystore
           echo "Stable VYRA signing key configured."
 
