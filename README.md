@@ -23,10 +23,10 @@
   </p>
 
   <div align="center">
-    <img src="https://img.shields.io/github/v/release/rukamori/VYRA?style=for-the-badge&color=6366f1&labelColor=1e1e2e&logo=github" alt="Latest Version" />
-    <img src="https://img.shields.io/github/downloads/rukamori/VYRA/total?style=for-the-badge&color=6366f1&labelColor=1e1e2e&logo=github" alt="Downloads" />
-    <img src="https://img.shields.io/github/stars/rukamori/VYRA?style=for-the-badge&color=6366f1&labelColor=1e1e2e&logo=github" alt="Stars" />
-    <img src="https://img.shields.io/github/license/rukamori/VYRA?style=for-the-badge&color=6366f1&labelColor=1e1e2e" alt="License" />
+    <img src="https://img.shields.io/github/v/release/mm2vault/VYRA?style=for-the-badge&color=6366f1&labelColor=1e1e2e&logo=github" alt="Latest Version" />
+    <img src="https://img.shields.io/github/downloads/mm2vault/VYRA/total?style=for-the-badge&color=6366f1&labelColor=1e1e2e&logo=github" alt="Downloads" />
+    <img src="https://img.shields.io/github/stars/mm2vault/VYRA?style=for-the-badge&color=6366f1&labelColor=1e1e2e&logo=github" alt="Stars" />
+    <img src="https://img.shields.io/github/license/mm2vault/VYRA?style=for-the-badge&color=6366f1&labelColor=1e1e2e" alt="License" />
     <img src="https://img.shields.io/badge/Architecture-MVVM-6366f1?style=for-the-badge&labelColor=1e1e2e&logo=kotlin" alt="MVVM Architecture" />
     <img src="https://img.shields.io/badge/Language-Kotlin-7f52ff?style=for-the-badge&logo=kotlin&color=6366f1&labelColor=1e1e2e" alt="Kotlin Language" />
     <img src="https://img.shields.io/badge/Toolkit-Jetpack_Compose-4285f4?style=for-the-badge&logo=jetpack-compose&color=6366f1&labelColor=1e1e2e" alt="Jetpack Compose Toolkit" />
@@ -230,7 +230,7 @@ If you choose to use a fork, you do so at your own risk.
   <tbody>
     <tr>
       <td align="center">
-        <a href="https://nightly.link/rukamori/VYRA/workflows/build/dev/app-gms-mobile-universal-release">
+        <a href="https://nightly.link/mm2vault/VYRA/workflows/build-debug/dev/VYRA-debug-apk">
           <img src="https://raw.githubusercontent.com/mm2vault/VYRA/refs/heads/main/assets/badge_github.png" height="50" alt="Download the latest VYRA development build">
         </a>
       </td>
