@@ -43,6 +43,19 @@ jobs:
       - name: Grant execute permission for Gradle wrapper
         run: chmod +x gradlew
 
+      - name: Configure stable VYRA signing key
+        if: ${{ secrets.VYRA_KEYSTORE_BASE64 != '' }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p app/keystore
+          echo "$VYRA_KEYSTORE_BASE64" | base64 --decode > app/keystore/release.keystore
+        env:
+          VYRA_KEYSTORE_BASE64: ${{ secrets.VYRA_KEYSTORE_BASE64 }}
+          STORE_PASSWORD: ${{ secrets.VYRA_KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.VYRA_KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.VYRA_KEY_PASSWORD }}
+
       - name: Build Debug APK
         run: ./gradlew assembleGmsMobileUniversalDebug -PvyraUpdateVersion="15.1.${GITHUB_RUN_NUMBER}" -PvyraUpdateCode="$((142 + GITHUB_RUN_NUMBER))"
         env:
