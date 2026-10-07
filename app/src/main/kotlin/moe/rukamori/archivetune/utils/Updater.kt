@@ -113,7 +113,7 @@ object Updater {
 
     private fun workflowArtifactDownloadUrl(): String {
         val artifactUrl =
-            "https://nightly.link/$githubOwner/$githubRepo/workflows/build/dev/${workflowArtifactName()}"
+            "https://nightly.link/$githubOwner/$githubRepo/workflows/build-debug/dev/${workflowArtifactName()}"
         return if (canDownloadUpdatesDirectly) "$artifactUrl.zip" else artifactUrl
     }
 
