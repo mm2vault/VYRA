@@ -43,7 +43,7 @@ jobs:
       - name: Grant execute permission for Gradle wrapper
         run: chmod +x gradlew
 
-      - name: Configure stable VYRA signing key
+      - name: Configure and verify stable VYRA signing key
         shell: bash
         env:
           VYRA_KEYSTORE_BASE64: ${{ secrets.VYRA_KEYSTORE_BASE64 }}
@@ -52,17 +52,23 @@ jobs:
           KEY_PASSWORD: ${{ secrets.VYRA_KEY_PASSWORD }}
         run: |
           set -euo pipefail
-          if [ -z "${VYRA_KEYSTORE_BASE64:-}" ]; then
-            echo "VYRA_KEYSTORE_BASE64 is not configured; continuing without stable signing key."
-            exit 0
-          fi
+
+          : "${VYRA_KEYSTORE_BASE64:?Missing GitHub secret VYRA_KEYSTORE_BASE64}"
+          : "${STORE_PASSWORD:?Missing GitHub secret VYRA_KEYSTORE_PASSWORD}"
+          : "${KEY_ALIAS:?Missing GitHub secret VYRA_KEY_ALIAS}"
+          : "${KEY_PASSWORD:?Missing GitHub secret VYRA_KEY_PASSWORD}"
+
           mkdir -p app/keystore
-          echo "$VYRA_KEYSTORE_BASE64" | base64 -d --ignore-garbage > app/keystore/release.keystore
+          printf '%s' "$VYRA_KEYSTORE_BASE64" | base64 --decode > app/keystore/release.keystore
+
           test -s app/keystore/release.keystore
-          echo "Stable VYRA signing key configured."
+
+          keytool -list             -keystore app/keystore/release.keystore             -storepass "$STORE_PASSWORD"             -alias "$KEY_ALIAS"             -keypass "$KEY_PASSWORD"             >/dev/null
+
+          echo "Stable VYRA signing key verified successfully."
 
       - name: Build Debug APK
-        run: ./gradlew assembleGmsMobileUniversalDebug -PvyraUpdateVersion="15.1.${GITHUB_RUN_NUMBER}" -PvyraUpdateCode="$((142 + GITHUB_RUN_NUMBER))"
+        run: ./gradlew clean assembleGmsMobileUniversalDebug -PvyraUpdateVersion="15.1.${GITHUB_RUN_NUMBER}" -PvyraUpdateCode="$((142 + GITHUB_RUN_NUMBER))"
         env:
           PULL_REQUEST: "false"
           STORE_PASSWORD: ${{ secrets.VYRA_KEYSTORE_PASSWORD }}
@@ -75,6 +81,14 @@ jobs:
           TOGETHER_BEARER_TOKEN: ${{ secrets.TOGETHER_BEARER_TOKEN }}
           CANVAS_BEARER_TOKEN: ${{ secrets.CANVAS_BEARER_TOKEN }}
           EXTRACTOR_BEARER: ${{ secrets.EXTRACTOR_BEARER }}
+
+      - name: Verify APK signature
+        shell: bash
+        run: |
+          set -euo pipefail
+          APK="$(find app/build/outputs/apk -type f -name '*.apk' | head -n 1)"
+          test -n "$APK"
+          apksigner verify --verbose "$APK"
 
       - name: Find APK
         id: apk
@@ -103,10 +117,4 @@ jobs:
         run: |
           set -euo pipefail
           TAG="v15.1.${GITHUB_RUN_NUMBER}"
-          gh release create "$TAG" \
-            "$RUNNER_TEMP/VYRA-debug.apk" \
-            "$RUNNER_TEMP/app-gms-mobile-universal-release.apk" \
-            --repo "$GITHUB_REPOSITORY" \
-            --title "VYRA v15.1.${GITHUB_RUN_NUMBER}" \
-            --notes "VYRA update build ${GITHUB_RUN_NUMBER}, commit ${GITHUB_SHA}." \
-            --prerelease
+          gh release create "$TAG"             "$RUNNER_TEMP/VYRA-debug.apk"             "$RUNNER_TEMP/app-gms-mobile-universal-release.apk"             --repo "$GITHUB_REPOSITORY"             --title "VYRA v15.1.${GITHUB_RUN_NUMBER}"             --notes "VYRA update build ${GITHUB_RUN_NUMBER}, commit ${GITHUB_SHA}."             --prerelease
