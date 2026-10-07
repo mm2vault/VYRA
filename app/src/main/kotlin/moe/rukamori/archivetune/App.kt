@@ -119,7 +119,7 @@ class App :
         }
         BotGuardTokenGenerator.initialize(this)
         PreferenceStore.start(this)
-        LeakCanaryController.initialize(this)
+        // LeakCanary is disabled for distributed VYRA builds; it is a developer-only diagnostic tool.
         Timber.plant(Timber.DebugTree())
         try {
             Timber.plant(
