@@ -63,7 +63,12 @@ jobs:
 
           test -s app/keystore/release.keystore
 
-          keytool -list             -keystore app/keystore/release.keystore             -storepass "$STORE_PASSWORD"             -alias "$KEY_ALIAS"             -keypass "$KEY_PASSWORD"             >/dev/null
+          keytool -list \
+            -keystore app/keystore/release.keystore \
+            -storepass "$STORE_PASSWORD" \
+            -alias "$KEY_ALIAS" \
+            -keypass "$KEY_PASSWORD" \
+            >/dev/null
 
           echo "Stable VYRA signing key verified successfully."
 
@@ -88,7 +93,21 @@ jobs:
           set -euo pipefail
           APK="$(find app/build/outputs/apk -type f -name '*.apk' | head -n 1)"
           test -n "$APK"
-          apksigner verify --verbose "$APK"
+
+          SDK_ROOT="${ANDROID_SDK_ROOT:-${ANDROID_HOME:-}}"
+          if [ -z "$SDK_ROOT" ] || [ ! -d "$SDK_ROOT/build-tools" ]; then
+            echo "Android SDK build-tools directory was not found."
+            exit 1
+          fi
+
+          APKSIGNER="$(find "$SDK_ROOT/build-tools" -type f -name apksigner | sort -V | tail -n 1)"
+          if [ -z "$APKSIGNER" ]; then
+            echo "apksigner was not found in Android SDK build-tools."
+            exit 1
+          fi
+
+          echo "Using apksigner: $APKSIGNER"
+          "$APKSIGNER" verify --verbose "$APK"
 
       - name: Find APK
         id: apk
@@ -117,4 +136,10 @@ jobs:
         run: |
           set -euo pipefail
           TAG="v15.1.${GITHUB_RUN_NUMBER}"
-          gh release create "$TAG"             "$RUNNER_TEMP/VYRA-debug.apk"             "$RUNNER_TEMP/app-gms-mobile-universal-release.apk"             --repo "$GITHUB_REPOSITORY"             --title "VYRA v15.1.${GITHUB_RUN_NUMBER}"             --notes "VYRA update build ${GITHUB_RUN_NUMBER}, commit ${GITHUB_SHA}."             --prerelease
+          gh release create "$TAG" \
+            "$RUNNER_TEMP/VYRA-debug.apk" \
+            "$RUNNER_TEMP/app-gms-mobile-universal-release.apk" \
+            --repo "$GITHUB_REPOSITORY" \
+            --title "VYRA v15.1.${GITHUB_RUN_NUMBER}" \
+            --notes "VYRA update build ${GITHUB_RUN_NUMBER}, commit ${GITHUB_SHA}." \
+            --prerelease
