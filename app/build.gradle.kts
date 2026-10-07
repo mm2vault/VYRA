@@ -202,9 +202,12 @@ android {
         create("release") {
             if (hasReleaseSigningConfig) {
                 storeFile = releaseKeystoreFile
+                storeType = "PKCS12"
                 storePassword = releaseStorePassword
                 keyAlias = releaseKeyAlias
-                keyPassword = releaseKeyPassword
+                // The VYRA keystore is PKCS#12; its private-key password must
+                // match the store password.
+                keyPassword = releaseStorePassword
             }
         }
     }
