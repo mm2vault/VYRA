@@ -68,6 +68,14 @@ jobs:
           echo "path=$RUNNER_TEMP/VYRA-debug.apk" >> "$GITHUB_OUTPUT"
           echo "APK created: $RUNNER_TEMP/VYRA-debug.apk"
 
+      - name: Upload Debug APK artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: VYRA-debug-apk
+          path: ${{ runner.temp }}/VYRA-debug.apk
+          if-no-files-found: error
+          retention-days: 14
+
       - name: Publish direct APK release
         if: github.ref == 'refs/heads/main'
         env:
