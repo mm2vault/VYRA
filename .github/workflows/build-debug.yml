@@ -44,17 +44,22 @@ jobs:
         run: chmod +x gradlew
 
       - name: Configure stable VYRA signing key
-        if: ${{ secrets.VYRA_KEYSTORE_BASE64 != '' }}
         shell: bash
-        run: |
-          set -euo pipefail
-          mkdir -p app/keystore
-          echo "$VYRA_KEYSTORE_BASE64" | base64 --decode > app/keystore/release.keystore
         env:
           VYRA_KEYSTORE_BASE64: ${{ secrets.VYRA_KEYSTORE_BASE64 }}
           STORE_PASSWORD: ${{ secrets.VYRA_KEYSTORE_PASSWORD }}
           KEY_ALIAS: ${{ secrets.VYRA_KEY_ALIAS }}
           KEY_PASSWORD: ${{ secrets.VYRA_KEY_PASSWORD }}
+        run: |
+          set -euo pipefail
+          if [ -z "${VYRA_KEYSTORE_BASE64:-}" ]; then
+            echo "VYRA_KEYSTORE_BASE64 is not configured; continuing without stable signing key."
+            exit 0
+          fi
+          mkdir -p app/keystore
+          echo "$VYRA_KEYSTORE_BASE64" | base64 --decode > app/keystore/release.keystore
+          test -s app/keystore/release.keystore
+          echo "Stable VYRA signing key configured."
 
       - name: Build Debug APK
         run: ./gradlew assembleGmsMobileUniversalDebug -PvyraUpdateVersion="15.1.${GITHUB_RUN_NUMBER}" -PvyraUpdateCode="$((142 + GITHUB_RUN_NUMBER))"
@@ -79,7 +84,6 @@ jobs:
           APK="$(find app/build/outputs/apk -type f -name '*.apk' | head -n 1)"
           test -n "$APK"
           cp "$APK" "$RUNNER_TEMP/VYRA-debug.apk"
-          # Compatibility alias so older VYRA builds can update themselves once.
           cp "$APK" "$RUNNER_TEMP/app-gms-mobile-universal-release.apk"
           echo "path=$RUNNER_TEMP/VYRA-debug.apk" >> "$GITHUB_OUTPUT"
           echo "APK created: $RUNNER_TEMP/VYRA-debug.apk"
