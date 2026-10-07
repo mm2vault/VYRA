@@ -68,7 +68,7 @@ android {
         minSdk = 26
         targetSdk = 37
         versionCode = 142
-        versionName = "15.1.0"
+        versionName = providers.gradleProperty("vyraUpdateVersion").orNull?.trim()?.takeIf { it.isNotEmpty() } ?: "15.1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
