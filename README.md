@@ -26,7 +26,7 @@
     <img src="https://img.shields.io/github/v/release/mm2vault/VYRA?style=for-the-badge&color=6366f1&labelColor=1e1e2e&logo=github" alt="Latest Version" />
     <img src="https://img.shields.io/github/downloads/mm2vault/VYRA/total?style=for-the-badge&color=6366f1&labelColor=1e1e2e&logo=github" alt="Downloads" />
     <img src="https://img.shields.io/github/stars/mm2vault/VYRA?style=for-the-badge&color=6366f1&labelColor=1e1e2e&logo=github" alt="Stars" />
-    <img src="https://img.shields.io/github/license/mm2vault/VYRA?style=for-the-badge&color=6366f1&labelColor=1e1e2e" alt="License" />
+    <img src="https://img.shields.io/github/license/mm2vault/VYRA?style=for-the-badge&color=6366f1&labelColor=1e1e2e&logo=github" alt="License" />
     <img src="https://img.shields.io/badge/Architecture-MVVM-6366f1?style=for-the-badge&labelColor=1e1e2e&logo=kotlin" alt="MVVM Architecture" />
     <img src="https://img.shields.io/badge/Language-Kotlin-7f52ff?style=for-the-badge&logo=kotlin&color=6366f1&labelColor=1e1e2e" alt="Kotlin Language" />
     <img src="https://img.shields.io/badge/Toolkit-Jetpack_Compose-4285f4?style=for-the-badge&logo=jetpack-compose&color=6366f1&labelColor=1e1e2e" alt="Jetpack Compose Toolkit" />
@@ -255,7 +255,6 @@ If you choose to use a fork, you do so at your own risk.
       </td>
     </tr>
   </tbody>
-</table>
 </div>
 
 > [!WARNING]  
@@ -318,7 +317,7 @@ Copyright © mm2vault and the VYRA contributors for their respective original co
 
 The **VYRA™** name, logo, application icon, and official branding are not licensed under the GPLv3. Unofficial forks must not present themselves as official VYRA releases or imply endorsement by the VYRA maintainers.
 
-See the [`LICENSE`](LICENSE) file for the complete GPLv3 terms.
+See the [LICENSE](LICENSE) file for the complete GPLv3 terms.
 
 
 ---
@@ -329,3 +328,5 @@ See the [`LICENSE`](LICENSE) file for the complete GPLv3 terms.
   <br />
   <img src="https://raw.githubusercontent.com/mm2vault/VYRA/refs/heads/dev/assets/badge_part.png" alt="VYRA Banner" style="width: 180px">
 </div>
+
+<!-- updater-test: 2026-10-07 -->
