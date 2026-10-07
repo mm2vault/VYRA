@@ -44,7 +44,7 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build Debug APK
-        run: ./gradlew assembleGmsMobileUniversalDebug -PvyraUpdateVersion="15.1.${GITHUB_RUN_NUMBER}"
+        run: ./gradlew assembleGmsMobileUniversalDebug -PvyraUpdateVersion="15.1.${GITHUB_RUN_NUMBER}" -PvyraUpdateCode="$((142 + GITHUB_RUN_NUMBER))"
         env:
           PULL_REQUEST: "false"
           GITHUB_EVENT_NAME: ${{ github.event_name }}
