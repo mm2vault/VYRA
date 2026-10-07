@@ -9,6 +9,9 @@ package moe.rukamori.archivetune.utils
 
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
+import android.provider.Settings
 import androidx.core.content.FileProvider
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.okhttp.OkHttp
@@ -203,17 +206,46 @@ object AppUpdateInstaller {
         context: Context,
         apkFile: File,
     ) {
+        require(apkFile.isFile && apkFile.length() > 0L) {
+            "Downloaded update APK is missing or empty"
+        }
+
+        val packageInfo =
+            context.packageManager.getPackageArchiveInfo(
+                apkFile.absolutePath,
+                PackageManager.GET_META_DATA,
+            ) ?: throw IOException("Downloaded update is not a valid Android APK")
+
+        require(packageInfo.packageName == context.packageName) {
+            "Downloaded APK belongs to ${packageInfo.packageName}, expected ${context.packageName}"
+        }
+
         val uri =
             FileProvider.getUriForFile(
                 context,
                 "${context.packageName}.FileProvider",
                 apkFile,
             )
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O &&
+            !context.packageManager.canRequestPackageInstalls()
+        ) {
+            val settingsIntent =
+                Intent(Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES).apply {
+                    data = Uri.parse("package:${context.packageName}")
+                    addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                }
+            context.startActivity(settingsIntent)
+            throw IOException("Allow VYRA to install updates, then tap Update again")
+        }
+
         val intent =
-            Intent(Intent.ACTION_VIEW)
-                .setDataAndType(uri, ApkMimeType)
-                .addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
-                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            Intent(Intent.ACTION_INSTALL_PACKAGE).apply {
+                setDataAndType(uri, ApkMimeType)
+                addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                putExtra(Intent.EXTRA_NOT_UNKNOWN_SOURCE, false)
+            }
         context.startActivity(intent)
     }
 
