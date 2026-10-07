@@ -65,12 +65,13 @@ object Updater {
     private val releaseRepo: String
         get() = BuildConfig.RELEASE_GITHUB_REPO
 
-    private const val CommitHistoryBaseUrl = "https://api.github.com/repos/rukamori/ArchiveTune"
+    private val commitHistoryBaseUrl: String
+        get() = "https://api.github.com/repos/$githubOwner/$githubRepo"
 
     private val stableReleaseBaseUrl: String
         get() = "https://github.com/$releaseOwner/$releaseRepo/releases"
     private val artifactWorkflowRunsUrl: String
-        get() = "https://api.github.com/repos/$githubOwner/$githubRepo/actions/workflows/build.yml/runs" +
+        get() = "https://api.github.com/repos/$githubOwner/$githubRepo/actions/workflows/build-debug.yml/runs" +
             "?branch=dev&status=success&per_page=1&exclude_pull_requests=true"
     var lastCheckTime = -1L
         private set
@@ -108,8 +109,7 @@ object Updater {
     private fun artifactReleaseArtifactName(): String =
         "app-$releaseArtifactPrefix${BuildConfig.DEVICE}-${BuildConfig.ARCHITECTURE}-release"
 
-    private fun workflowArtifactName(): String =
-        "app-$releaseArtifactPrefix${BuildConfig.DEVICE}-${BuildConfig.ARCHITECTURE}-release"
+    private fun workflowArtifactName(): String = "VYRA-debug-apk"
 
     private fun workflowArtifactDownloadUrl(): String {
         val artifactUrl =
@@ -271,6 +271,12 @@ object Updater {
         json: String,
         expectedArtifactName: String,
     ): List<ReleaseInfo> {
+        val expectedArtifactNames = buildSet {
+            add(expectedArtifactName)
+            if (BuildConfig.DEBUG && expectedArtifactName == "VYRA-debug.apk") {
+                add("app-gms-mobile-universal-release.apk")
+            }
+        }
         val jsonArray = JSONArray(json)
         val releases = ArrayList<ReleaseInfo>(jsonArray.length())
         for (i in 0 until jsonArray.length()) {
@@ -281,7 +287,7 @@ object Updater {
                     (0 until releaseAssets.length())
                         .asSequence()
                         .mapNotNull(releaseAssets::optJSONObject)
-                        .firstOrNull { asset -> asset.optString("name") == expectedArtifactName }
+                        .firstOrNull { asset -> asset.optString("name") in expectedArtifactNames }
                         ?.optString("browser_download_url")
                         ?.takeIf { it.isNotBlank() }
                 }
@@ -409,7 +415,7 @@ object Updater {
 
             val response =
                 client
-                    .get("$CommitHistoryBaseUrl/commits?sha=$branch&per_page=$count")
+                    .get("$commitHistoryBaseUrl/commits?sha=$branch&per_page=$count")
                     .bodyAsText()
             val jsonArray = JSONArray(response)
             val commits = mutableListOf<GitCommit>()
@@ -554,7 +560,7 @@ object Updater {
             client.get(artifactWorkflowRunsUrl) {
                 headers {
                     append("Accept", "application/vnd.github+json")
-                    append("User-Agent", "ArchiveTune")
+                    append("User-Agent", "VYRA")
                 }
             }
         val responseBody = response.bodyAsText()
@@ -598,7 +604,7 @@ object Updater {
             return ""
         }
 
-        // Artifact builds are published by build.yml as workflow run artifacts,
+        // Development builds are published by build-debug.yml as workflow run artifacts,
         // not as GitHub Release assets.
         latestCanaryDownloadUrl
             ?.takeIf { it.startsWith("https://nightly.link/") }
