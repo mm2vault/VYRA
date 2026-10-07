@@ -27,7 +27,13 @@ jobs:
             exit 1
           fi
 
-          NEW_VERSION=$(grep -oP 'versionName\s*=\s*"\K[^"]+' app/build.gradle.kts || echo "")
+          # versionName is now calculated by Gradle from -PvyraUpdateVersion, so the source
+          # file no longer contains a literal versionName string. Use the fallback/default
+          # version from the Gradle expression for this legacy release workflow.
+          NEW_VERSION=$(grep -oP 'versionName\s*=.*?:\s*"\K[^" ]+' app/build.gradle.kts | head -n 1 || echo "")
+          if [ -z "$NEW_VERSION" ]; then
+            NEW_VERSION=$(grep -oP 'versionName\s*=.*?"([0-9]+\.[0-9]+\.[0-9]+)"' app/build.gradle.kts | grep -oP '[0-9]+\.[0-9]+\.[0-9]+' | head -n 1 || echo "")
+          fi
 
           if [ -z "$NEW_VERSION" ]; then
             echo "Error: Could not find versionName in app/build.gradle.kts"
