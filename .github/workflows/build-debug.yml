@@ -44,7 +44,7 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build Debug APK
-        run: ./gradlew assembleGmsMobileUniversalDebug
+        run: ./gradlew assembleGmsMobileUniversalDebug -PvyraUpdateVersion="15.1.${GITHUB_RUN_NUMBER}"
         env:
           PULL_REQUEST: "false"
           GITHUB_EVENT_NAME: ${{ github.event_name }}
@@ -72,10 +72,10 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          TAG="debug-${GITHUB_RUN_NUMBER}"
+          TAG="v15.1.${GITHUB_RUN_NUMBER}"
           gh release create "$TAG" \
             "$RUNNER_TEMP/VYRA-debug.apk" \
             --repo "$GITHUB_REPOSITORY" \
-            --title "VYRA Debug APK #${GITHUB_RUN_NUMBER}" \
-            --notes "VYRA debug APK built from commit ${GITHUB_SHA}." \
+            --title "VYRA v15.1.${GITHUB_RUN_NUMBER}" \
+            --notes "VYRA update build ${GITHUB_RUN_NUMBER}, commit ${GITHUB_SHA}." \
             --prerelease
