@@ -225,6 +225,9 @@ android {
             buildConfigField("boolean", "GATEKEEPER_ENABLED", "false")
             applicationIdSuffix = ".debug"
             isDebuggable = true
+            if (hasReleaseSigningConfig) {
+                signingConfig = signingConfigs.getByName("release")
+            }
         }
         create("nightly") {
             applicationIdSuffix = ".nightly"
