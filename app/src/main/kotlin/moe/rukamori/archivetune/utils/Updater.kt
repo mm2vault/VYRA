@@ -98,10 +98,11 @@ object Updater {
             }
 
     private fun stableReleaseArtifactName(): String =
-        if (BuildConfig.IS_NIGHTLY_BUILD) {
-            "app-$releaseArtifactPrefix${BuildConfig.DEVICE}-${BuildConfig.ARCHITECTURE}-nightly.apk"
-        } else {
-            "app-$releaseArtifactPrefix${BuildConfig.DEVICE}-${BuildConfig.ARCHITECTURE}-release.apk"
+        when {
+            BuildConfig.DEBUG -> "VYRA-debug.apk"
+            BuildConfig.IS_NIGHTLY_BUILD ->
+                "app-$releaseArtifactPrefix${BuildConfig.DEVICE}-${BuildConfig.ARCHITECTURE}-nightly.apk"
+            else -> "app-$releaseArtifactPrefix${BuildConfig.DEVICE}-${BuildConfig.ARCHITECTURE}-release.apk"
         }
 
     private fun artifactReleaseArtifactName(): String =
@@ -339,7 +340,7 @@ object Updater {
             client.get("https://api.github.com/repos/$releaseOwner/$releaseRepo/releases?per_page=$perPage") {
                 headers {
                     append("Accept", "application/vnd.github+json")
-                    append("User-Agent", "ArchiveTune")
+                    append("User-Agent", "VYRA")
                     if (!cachedEtag.isNullOrBlank()) {
                         append("If-None-Match", cachedEtag)
                     }
