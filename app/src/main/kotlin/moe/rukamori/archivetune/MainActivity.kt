@@ -919,8 +919,8 @@ class MainActivity : ComponentActivity() {
             ArchiveTuneTheme(
                 darkTheme = useDarkTheme,
                 pureBlack = pureBlack,
-                themeColor = themeColor,
-                seedPalette = if (!enableDynamicTheme) customThemeSeedPalette else null,
+                themeColor = DefaultThemeColor,
+                seedPalette = null,
                 disableAnimations = disableAnimations,
                 fontPreference = fontPreference,
                 customFontUri = customFontUri,
@@ -1880,7 +1880,7 @@ class MainActivity : ComponentActivity() {
                                                     Row(verticalAlignment = Alignment.CenterVertically) {
                                                         // app icon
                                                         Icon(
-                                                            painter = painterResource(R.drawable.about_appbar),
+                                                            painter = painterResource(R.drawable.resim),
                                                             contentDescription = null,
                                                             modifier =
                                                                 Modifier
