@@ -67,8 +67,8 @@ android {
     applicationId = "moe.rukamori.archivetune"
         minSdk = 26
         targetSdk = 37
-        versionCode = providers.gradleProperty("vyraUpdateCode").orNull?.toIntOrNull() ?: 142
-        versionName = providers.gradleProperty("vyraUpdateVersion").orNull?.trim()?.takeIf { it.isNotEmpty() } ?: "15.1.0"
+        versionCode = providers.gradleProperty("vyraUpdateCode").orNull?.toIntOrNull() ?: 143
+        versionName = providers.gradleProperty("vyraUpdateVersion").orNull?.trim()?.takeIf { it.isNotEmpty() } ?: "15.1.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
