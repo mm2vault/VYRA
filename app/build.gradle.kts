@@ -81,14 +81,14 @@ android {
             localProperties.getProperty("LASTFM_SECRET")
                 ?: System.getenv("LASTFM_SECRET")
                 ?: ""
-        buildConfigField("String", "LASTFM_API_KEY", "\"$lastfmApiKey\"")
-        buildConfigField("String", "LASTFM_SECRET", "\"$lastfmSecret\"")
+        buildConfigField("String", "LASTFM_API_KEY", lastfmApiKey.asBuildConfigString())
+        buildConfigField("String", "LASTFM_SECRET", lastfmSecret.asBuildConfigString())
 
         val togetherBearerToken =
             localProperties.getProperty("TOGETHER_BEARER_TOKEN")
                 ?: System.getenv("TOGETHER_BEARER_TOKEN")
                 ?: ""
-        buildConfigField("String", "TOGETHER_BEARER_TOKEN", "\"$togetherBearerToken\"")
+        buildConfigField("String", "TOGETHER_BEARER_TOKEN", togetherBearerToken.asBuildConfigString())
 
         buildConfigField("String", "DATA_SERVER_URL", dataServerUrl.asBuildConfigString())
         buildConfigField("String", "API_BEARER_TOKEN", apiBearerToken.asBuildConfigString())
@@ -101,7 +101,7 @@ android {
                     ?: System.getenv("NIGHTLY_BUILD_HASH")
                     ?: ""
                 ).trim()
-        buildConfigField("String", "NIGHTLY_BUILD_HASH", "\"$nightlyBuildHash\"")
+        buildConfigField("String", "NIGHTLY_BUILD_HASH", nightlyBuildHash.asBuildConfigString())
 
         val nightlyVersionName =
             providers.gradleProperty("nightlyVersionName").orNull?.trim().orEmpty()
