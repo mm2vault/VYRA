@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<bitmap xmlns:android="http://schemas.android.com/apk/res/android"
-    android:src="@drawable/ic_notification_vyra"
-    android:gravity="center"
-    android:filter="true" />
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M3.2,4 L6,4 L10,15.1 L14,4 L16.8,4 L11.2,19.2 L8.8,19.2 Z" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M17.2,5 L19.5,5 L19.5,8 L17.2,8 Z M17.2,10 L19.5,10 L19.5,13 L17.2,13 Z M17.2,15 L19.5,15 L19.5,18 L17.2,18 Z" />
+</vector>
