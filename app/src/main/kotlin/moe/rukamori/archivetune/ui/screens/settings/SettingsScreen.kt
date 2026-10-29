@@ -266,7 +266,7 @@ private fun VYRASocialLinks(
     modifier: Modifier = Modifier,
 ) {
     val links = listOf(
-        Triple("Discord", "Join the VYRA community", "https://discord.gg/JJmEGx9mN3"),
+        Triple("Discord", "Join the VYRA community", "https://discord.gg/4AUBKE3dAC"),
         Triple("TikTok", "Short clips and updates", "https://www.tiktok.com/@vyra_music0"),
         Triple("YouTube", "Videos and announcements", "https://youtube.com/@mm2_ultimatehub"),
         Triple("VYRA website", "Project and promotional site", "https://github.com/mm2vault/VYRA-Website"),
