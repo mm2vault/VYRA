@@ -10,15 +10,21 @@
 package moe.rukamori.archivetune.ui.screens.settings
 
 import android.Manifest
+import android.content.Intent
+import android.net.Uri
 import android.content.pm.PackageManager
 import android.os.Build
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.WindowInsetsSides
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.padding
@@ -32,6 +38,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.LargeFlexibleTopAppBar
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
@@ -230,6 +237,72 @@ fun SettingsScreen(
                                             0.dp
                                         },
                                 ),
+                    )
+                }
+            }
+
+            item(key = "vyra_social_links", contentType = "social_links") {
+                VYRASocialLinks(
+                    onOpenLink = { url ->
+                        runCatching {
+                            context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+                        }
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = SettingsDimensions.ScreenHorizontalPadding)
+                        .padding(top = SettingsDimensions.SectionSpacing),
+                )
+            }
+        }
+    }
+}
+
+@Composable
+private fun VYRASocialLinks(
+    onOpenLink: (String) -> Unit,
+    modifier: Modifier = Modifier,
+) {
+    val links = listOf(
+        Triple("Discord", "Join the VYRA community", "https://discord.gg/JJmEGx9mN3"),
+        Triple("TikTok", "Short clips and updates", "https://www.tiktok.com/@vyra_music0"),
+        Triple("YouTube", "Videos and announcements", "https://youtube.com/@mm2_ultimatehub"),
+        Triple("VYRA website", "Project and promotional site", "https://github.com/mm2vault/VYRA-Website"),
+    )
+
+    Column(modifier = modifier) {
+        Text(
+            text = "Follow VYRA",
+            style = MaterialTheme.typography.titleMedium,
+            fontWeight = FontWeight.SemiBold,
+            modifier = Modifier.padding(start = 4.dp, bottom = 10.dp),
+        )
+        links.forEach { (title, description, url) ->
+            Surface(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(bottom = 8.dp)
+                    .clickable { onOpenLink(url) },
+                shape = androidx.compose.foundation.shape.RoundedCornerShape(18.dp),
+                color = MaterialTheme.colorScheme.surfaceContainer,
+            ) {
+                Row(modifier = Modifier.padding(horizontal = 16.dp, vertical = 14.dp)) {
+                    Column(modifier = Modifier.weight(1f)) {
+                        Text(
+                            text = title,
+                            style = MaterialTheme.typography.titleSmall,
+                            fontWeight = FontWeight.Medium,
+                        )
+                        Text(
+                            text = description,
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        )
+                    }
+                    Text(
+                        text = "↗",
+                        style = MaterialTheme.typography.titleMedium,
+                        color = MaterialTheme.colorScheme.primary,
                     )
                 }
             }
