@@ -289,10 +289,17 @@ private fun VYRASocialLinks(
                 color = MaterialTheme.colorScheme.surfaceContainer,
             ) {
                 Row(modifier = Modifier.padding(horizontal = 16.dp, vertical = 14.dp)) {
-                    if (title == "Discord") {
+                    val logoRes = when (title) {
+                        "Discord" -> R.drawable.discord_logo
+                        "TikTok" -> R.drawable.tiktok_logo
+                        "YouTube" -> R.drawable.youtube_logo
+                        "VYRA website" -> R.drawable.github_logo
+                        else -> null
+                    }
+                    if (logoRes != null) {
                         Icon(
-                            painter = painterResource(R.drawable.discord_logo),
-                            contentDescription = "Discord",
+                            painter = painterResource(logoRes),
+                            contentDescription = "$title logo",
                             modifier = Modifier.size(36.dp),
                             tint = androidx.compose.ui.graphics.Color.Unspecified,
                         )
