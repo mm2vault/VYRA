@@ -17,6 +17,7 @@ import android.os.Build
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -28,6 +29,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
@@ -269,6 +271,8 @@ private fun VYRASocialLinks(
         Triple("YouTube", "Videos and announcements", "https://youtube.com/@mm2_ultimatehub"),
         Triple("VYRA website", "Project and promotional site", "https://github.com/mm2vault/VYRA-Website"),
     )
+    val violet = androidx.compose.ui.graphics.Color(0xFFB388FF)
+    val iconGlyphs = listOf("◉", "♪", "▶", "V")
 
     Column(modifier = modifier) {
         Text(
@@ -277,7 +281,7 @@ private fun VYRASocialLinks(
             fontWeight = FontWeight.SemiBold,
             modifier = Modifier.padding(start = 4.dp, bottom = 10.dp),
         )
-        links.forEach { (title, description, url) ->
+        links.forEachIndexed { index, (title, description, url) ->
             Surface(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -286,7 +290,28 @@ private fun VYRASocialLinks(
                 shape = androidx.compose.foundation.shape.RoundedCornerShape(18.dp),
                 color = MaterialTheme.colorScheme.surfaceContainer,
             ) {
-                Row(modifier = Modifier.padding(horizontal = 16.dp, vertical = 14.dp)) {
+                Row(
+                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 14.dp),
+                    verticalAlignment = androidx.compose.ui.Alignment.CenterVertically,
+                ) {
+                    Surface(
+                        shape = androidx.compose.foundation.shape.CircleShape,
+                        color = violet.copy(alpha = 0.16f),
+                        modifier = Modifier.padding(end = 14.dp),
+                    ) {
+                        Box(
+                            modifier = Modifier
+                                .size(42.dp),
+                            contentAlignment = androidx.compose.ui.Alignment.Center,
+                        ) {
+                            Text(
+                                text = iconGlyphs[index],
+                                color = violet,
+                                style = MaterialTheme.typography.titleLarge,
+                                fontWeight = FontWeight.Bold,
+                            )
+                        }
+                    }
                     Column(modifier = Modifier.weight(1f)) {
                         Text(
                             text = title,
@@ -302,7 +327,7 @@ private fun VYRASocialLinks(
                     Text(
                         text = "↗",
                         style = MaterialTheme.typography.titleMedium,
-                        color = MaterialTheme.colorScheme.primary,
+                        color = violet,
                     )
                 }
             }
