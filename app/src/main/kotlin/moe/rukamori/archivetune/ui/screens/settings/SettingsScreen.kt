@@ -26,6 +26,8 @@ import androidx.compose.foundation.layout.WindowInsetsSides
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.windowInsetsPadding
@@ -264,7 +266,7 @@ private fun VYRASocialLinks(
     modifier: Modifier = Modifier,
 ) {
     val links = listOf(
-        Triple("Discord", "Join the VYRA community", "https://discord.gg/JJmEGx9mN3"),
+        Triple("Discord", "Join the VYRA community", "https://discord.gg/4AUBKE3dAC"),
         Triple("TikTok", "Short clips and updates", "https://www.tiktok.com/@vyra_music0"),
         Triple("YouTube", "Videos and announcements", "https://youtube.com/@mm2_ultimatehub"),
         Triple("VYRA website", "Project and promotional site", "https://github.com/mm2vault/VYRA-Website"),
@@ -287,6 +289,15 @@ private fun VYRASocialLinks(
                 color = MaterialTheme.colorScheme.surfaceContainer,
             ) {
                 Row(modifier = Modifier.padding(horizontal = 16.dp, vertical = 14.dp)) {
+                    if (title == "Discord") {
+                        Icon(
+                            painter = painterResource(R.drawable.discord_logo),
+                            contentDescription = "Discord",
+                            modifier = Modifier.size(36.dp),
+                            tint = androidx.compose.ui.graphics.Color.Unspecified,
+                        )
+                        Spacer(modifier = Modifier.width(14.dp))
+                    }
                     Column(modifier = Modifier.weight(1f)) {
                         Text(
                             text = title,
