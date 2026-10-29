@@ -269,7 +269,7 @@ private fun VYRASocialLinks(
         Triple("Discord", "Join the VYRA community", "https://discord.gg/4AUBKE3dAC"),
         Triple("TikTok", "Short clips and updates", "https://www.tiktok.com/@vyra_music0"),
         Triple("YouTube", "Videos and announcements", "https://youtube.com/@mm2_ultimatehub"),
-        Triple("VYRA website", "Project and promotional site", "https://github.com/mm2vault/VYRA-Website"),
+        Triple("VYRA website", "Project and promotional site", "https://mm2vault.github.io/VYRA-Website/#download"),
     )
     val violet = androidx.compose.ui.graphics.Color(0xFFB388FF)
     val iconResources = listOf(R.drawable.social_discord, R.drawable.social_tiktok, R.drawable.social_youtube, R.drawable.vyra_mark)
