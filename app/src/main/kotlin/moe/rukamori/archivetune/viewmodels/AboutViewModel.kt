@@ -256,15 +256,11 @@ class AboutViewModel
         private var contributorsJob: Job? = null
         private var translationContributorsJob: Job? = null
         private var dependencyLicensesJob: Job? = null
-        private var contributorsState: AboutContributorsUiState = AboutContributorsUiState.Loading
+        private var contributorsState: AboutContributorsUiState = AboutContributorsUiState.Empty
         private var translationContributorsState: AboutTranslationContributorsUiState =
             AboutTranslationContributorsUiState.Loading
         private var dependencyLicensesState: AboutDependencyLicensesUiState = AboutDependencyLicensesUiState.Loading
         private var activeDialog = AboutDialog.NONE
-
-        init {
-            loadContributors()
-        }
 
         fun retryContributors() {
             loadContributors(force = true)
