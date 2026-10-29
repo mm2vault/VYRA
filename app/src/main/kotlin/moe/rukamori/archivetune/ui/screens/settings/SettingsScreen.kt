@@ -272,7 +272,7 @@ private fun VYRASocialLinks(
         Triple("VYRA website", "Project and promotional site", "https://github.com/mm2vault/VYRA-Website"),
     )
     val violet = androidx.compose.ui.graphics.Color(0xFFB388FF)
-    val iconGlyphs = listOf("◉", "♪", "▶", "V")
+    val iconResources = listOf(R.drawable.social_discord, R.drawable.social_tiktok, R.drawable.social_youtube, R.drawable.vyra_mark)
 
     Column(modifier = modifier) {
         Text(
@@ -304,11 +304,11 @@ private fun VYRASocialLinks(
                                 .size(42.dp),
                             contentAlignment = androidx.compose.ui.Alignment.Center,
                         ) {
-                            Text(
-                                text = iconGlyphs[index],
-                                color = violet,
-                                style = MaterialTheme.typography.titleLarge,
-                                fontWeight = FontWeight.Bold,
+                            Icon(
+                                painter = painterResource(iconResources[index]),
+                                contentDescription = title,
+                                tint = violet,
+                                modifier = Modifier.size(26.dp),
                             )
                         }
                     }
